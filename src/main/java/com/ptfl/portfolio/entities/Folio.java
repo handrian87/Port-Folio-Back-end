@@ -10,15 +10,17 @@ import java.util.Collection;
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor
 public class Folio {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(unique = true)
+    private String folioRef;
     private String firstName;
     private String job;
     private String picture;
     @Column(length = 255)
     private String presentation;
     @OneToMany
-    private Collection<Skills> skill;
+    private Collection<Skills> skills;
     @OneToMany
     private Collection<Project> project;
     @OneToMany

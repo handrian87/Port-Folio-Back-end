@@ -8,8 +8,9 @@ import javax.persistence.*;
 
 @Entity
 @Data @AllArgsConstructor @NoArgsConstructor
+@Table(name="media")
 public class Media {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     @Column(length = 25)
     private String name;
